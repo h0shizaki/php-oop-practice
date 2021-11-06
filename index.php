@@ -101,5 +101,31 @@
     // echo '<br>'.$playerTwo->email ;
 
     // echo '<br><br>Add friend<br>'.$playerOne->addFriend($playerTwo->username) .'<br>';
+    
+?>
+
+<?php
+    class Weather {
+        private static $tempCondition = ['cold','mild','warm'];
+
+        public static function celToFaren($c){
+            return ($c * 9/5) + 32;
+        }
+
+        public static function determineTempCondition($f){
+            if($f < 40){
+                return self::$tempCondition[0];
+            } else if($f < 70){
+                return self::$tempCondition[1];
+            }else{
+                return self::$tempCondition[2];
+            }
+        }
+
+    }
+
+    // print_r(Weather :: $tempCondition);
+    echo Weather :: celToFaren(20) .'<br>';
+    echo Weather :: determineTempCondition(20) .'';
 ?>
 
